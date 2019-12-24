@@ -1,2 +1,2 @@
-# homebrew-phetch
+# homebrew-code
 homebrew-code
