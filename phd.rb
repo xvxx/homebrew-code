@@ -1,19 +1,22 @@
 class Phd < Formula
   desc "an esoteric gopher server"
   homepage "https://github.com/xvxx/phd"
-  version "v0.1.6"
+  version "v0.1.7"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/xvxx/phd/releases/download/v0.1.6/phd-v0.1.6-macos.zip"
-    sha256 "becd8be6f30bf1c9895581e9d424205a1ba7be95574b2e8585009961dd31eb2e"
+    url "https://github.com/xvxx/phd/releases/download/v0.1.7/phd-v0.1.7-macos.zip"
+    sha256 "e874958fbed3adc639dc2ac0bad0d9ee5b65ae567d895dd155129e9d8e425b36"
   elsif OS.linux?
-    url "https://github.com/xvxx/phd/releases/download/v0.1.6/phd-v0.1.6-linux-x86_64.tgz"
-    sha256 "30322ced4d27885132f3883dde4bb56844888ec804d6984cdb89bfd8fa8d8bb0"
+    url "https://github.com/xvxx/phd/releases/download/v0.1.7/phd-v0.1.7-linux-x86_64.tgz"
+    sha256 "1e628b414f12f76d63b5769f96b0702acf542a4837848412ec87ef7ce15c5e82"
   end
 
   def install
     bin.install "phd"
+    if File.exists? "phd.1"
+      man.install "phd.1"
+    end
   end
 end
 
