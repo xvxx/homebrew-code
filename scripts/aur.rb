@@ -33,4 +33,6 @@ newsha = `ssh archdev 'sha256sum phetch-aur/phetch-#{version.sub('v','')}.tar.gz
 oldsha = pkgbuild[/sha256sums=(.+)/, 1]
 pkgbuild.sub!("sha256sums=#{oldsha}", "sha256sums=('#{newsha}')")
 
+`cd phetch-aur && makepkg --printsrcinfo > .SRCINFO`
+
 File.open('phetch-aur/PKGBUILD', 'w') { |f| f.puts pkgbuild }
