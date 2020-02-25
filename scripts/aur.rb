@@ -26,6 +26,7 @@ File.open('PKGBUILD.new', 'w') { |f| f.puts pkgbuild }
 `ssh archdev 'cd phetch-aur && git clean -fd && git checkout . && git pull'`
 `scp PKGBUILD.new archdev:~/phetch-aur/PKGBUILD`
 `ssh archdev 'cd phetch-aur && makepkg'`
+`rm -f PKGBUILD.new`
 
 puts "ssh archdev 'sha256sum phetch-aur/phetch-#{version.sub('v','')}.tar.gz'"
 newsha = `ssh archdev 'sha256sum phetch-aur/phetch-#{version.sub('v','')}.tar.gz'`.split(' ').first
