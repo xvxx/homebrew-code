@@ -15,8 +15,8 @@ name = cargo[/name = "(.+)"/, 1]
 description = cargo[/description = "(.+)"/, 1]
 url = cargo[/repository = "(.+)"/, 1]
 
-def download!(name file)
-  `wget https://github.com/xvxx/#{name}/releases/download/#{name}`
+def download!(name, file)
+  `wget https://github.com/xvxx/#{name}/releases/download/#{file}`
 end
 
 mac_pkg = "#{version}/#{name}-#{version}-macos.zip"
