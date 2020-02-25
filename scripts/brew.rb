@@ -1,14 +1,14 @@
 #!/usr/bin/env ruby
 
 if ARGV.length < 1
-    STDERR.puts "pass path to Cargo.toml"
-    exit
+    warn "pass path to Cargo.toml"
+    exit 1
 end
 cargo = File.read File.expand_path ARGV[0]
 version = ENV['VERSION'].to_s
 if version.empty?
-    STDERR.puts "Set VERSION=vX.X.X"
-    exit
+    warn "Set VERSION=vX.X.X"
+    exit 1
 end
 
 name = cargo[/name = "(.+)"/, 1]
