@@ -1,6 +1,16 @@
-.PHONY: phetch
+.PHONY: phetch phetch-update phd phd-update clean
 
 default: phetch
+
+phd: phd-update
+	./scripts/brew.rb phd-clone/Cargo.toml > phd.rb
+	rm -f *.tgz *.zip
+
+phd-update: phd-clone
+	cd phd-clone && git pull
+
+phd-clone:
+	git clone https://github.com/xvxx/phd phd-clone
 
 phetch: phetch-update
 	./scripts/brew.rb phetch-clone/Cargo.toml > phetch.rb
@@ -19,4 +29,4 @@ phetch-clone:
 
 clean:
 	rm -f *.tgz *.zip *.tgz.* *.zip.*
-	rm -rf phetch-aur phetch-clone
+	rm -rf *-aur *-clone
