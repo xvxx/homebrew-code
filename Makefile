@@ -2,6 +2,16 @@
 
 default: phetch
 
+deadwiki: deadwiki-update
+	./scripts/brew.rb deadwiki-clone/Cargo.toml > deadwiki.rb
+	rm -f *.tgz *.zip
+
+deadwiki-update: deadwiki-clone
+	cd deadwiki-clone && git pull
+
+deadwiki-clone:
+	git clone https://github.com/xvxx/deadwiki deadwiki-clone
+
 phd: phd-update
 	./scripts/brew.rb phd-clone/Cargo.toml > phd.rb
 	rm -f *.tgz *.zip
