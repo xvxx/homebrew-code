@@ -1,25 +1,21 @@
-PROJECT = "deadwiki"
-URL = "https://github.com/xvxx/#{PROJECT}"
-VERSION = "v0.1.6"
-
 class Deadwiki < Formula
   desc "dead simple personal wiki"
-  homepage URL
-  version VERSION
+  homepage "https://github.com/xvxx/deadwiki"
+  version "v0.1.15"
   bottle :unneeded
 
   if OS.mac?
-    url "#{URL}/releases/download/#{VERSION}/#{PROJECT}-#{VERSION}-macos.zip"
-    sha256 "fd91891be37cc46ea2b64541153d6cdc545b282661ad7c9cf77a46fab78c502c"
+    url "https://github.com/xvxx/deadwiki/releases/download/v0.1.15/deadwiki-v0.1.15-macos.zip"
+    sha256 "f5e15c1e84308d0d11a577fa7498ce778a456fbaef362194af2ce96225396c6e"
   elsif OS.linux?
-    url "#{URL}/releases/download/#{VERSION}/#{PROJECT}-#{VERSION}-linux-x86_64.tgz"
-    sha256 "527aa6878bf10712a33f22d7aecb0a7eab81a8468f5b5f6e5c460eff53926507"
+    url "https://github.com/xvxx/deadwiki/releases/download/v0.1.15/deadwiki-v0.1.15-linux-x86_64.tgz"
+    sha256 "8c4858d14d331c9218aa5a2892f6492df30ecc5897da1afb42ac27aaa192eee8"
   end
 
   def install
-    bin.install PROJECT
-    if File.exists? "#{PROJECT}.1"
-      man.install "#{PROJECT}.1"
+    bin.install "deadwiki"
+    if File.exists? "deadwiki.1"
+      man.install "deadwiki.1"
     end
   end
 end
