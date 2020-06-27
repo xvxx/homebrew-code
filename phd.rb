@@ -1,15 +1,15 @@
 class Phd < Formula
   desc "an esoteric gopher server"
   homepage "https://github.com/xvxx/phd"
-  version "v0.1.11"
+  version "v0.1.12"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/xvxx/phd/releases/download/v0.1.11/phd-v0.1.11-macos.zip"
-    sha256 "fd91891be37cc46ea2b64541153d6cdc545b282661ad7c9cf77a46fab78c502c"
+    url "https://github.com/xvxx/phd/releases/download/v0.1.12/phd-v0.1.12-macos.zip"
+    sha256 "cc12f7ab12b2e22b605a159eada3ff3c4718a6ea475fda3560a293106ba97a95"
   elsif OS.linux?
-    url "https://github.com/xvxx/phd/releases/download/v0.1.11/phd-v0.1.11-linux-x86_64.tgz"
-    sha256 "527aa6878bf10712a33f22d7aecb0a7eab81a8468f5b5f6e5c460eff53926507"
+    url "https://github.com/xvxx/phd/releases/download/v0.1.12/phd-v0.1.12-linux-x86_64.tgz"
+    sha256 "fe806ae91c9500248930eb6d5930b6e7b733f2c97bf968335af75155cb667db5"
   end
 
   def install
