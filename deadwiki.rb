@@ -1,15 +1,15 @@
 class Deadwiki < Formula
   desc "dead simple personal wiki"
   homepage "https://github.com/xvxx/deadwiki"
-  version "v0.1.17"
+  version "v0.1.19"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/xvxx/deadwiki/releases/download/v0.1.17/deadwiki-v0.1.17-macos.zip"
-    sha256 "3d16dcd7f8c9a95f54bdb234905e46b0e211c4c94c207900dece00b0b30cd852"
+    url "https://github.com/xvxx/deadwiki/releases/download/v0.1.19/deadwiki-v0.1.19-macos.zip"
+    sha256 "5e42b8eabfde34f4d84a9c2d1f9b1dee9fe20d189e8d16e037ec7fd95011e6c9"
   elsif OS.linux?
-    url "https://github.com/xvxx/deadwiki/releases/download/v0.1.17/deadwiki-v0.1.17-linux-x86_64.tgz"
-    sha256 "5da015cd6d755907ff1794b6625ddf5a785353fd5fad6a35f924751fa5b624a4"
+    url "https://github.com/xvxx/deadwiki/releases/download/v0.1.19/deadwiki-v0.1.19-linux-x86_64.tgz"
+    sha256 "c757ace6679c3ee57a960bd6a6d0781a6c2d9e117f6e8e1a334f8af87387675c"
   end
 
   def install
