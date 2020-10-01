@@ -1,15 +1,15 @@
 class Phetch < Formula
   desc "quick lil gopher client"
   homepage "https://github.com/xvxx/phetch"
-  version "v1.0.5"
+  version "v1.0.6"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/xvxx/phetch/releases/download/v1.0.5/phetch-v1.0.5-macos.zip"
-    sha256 "6e9577a65312f68bb6fff6513a516782d28f677b6134725fbdd5d861e9390c27"
+    url "https://github.com/xvxx/phetch/releases/download/v1.0.6/phetch-v1.0.6-macos.zip"
+    sha256 "fbd29b927f0f6f6a87124b58e83fec99014818620709f55661ad8f236babbd60"
   elsif OS.linux?
-    url "https://github.com/xvxx/phetch/releases/download/v1.0.5/phetch-v1.0.5-linux-x86_64.tgz"
-    sha256 "b7fff0dc48185f010bfcb780fbd14f2e83012fbe4c9b73265772aeb071ac4ccc"
+    url "https://github.com/xvxx/phetch/releases/download/v1.0.6/phetch-v1.0.6-linux-x86_64.tgz"
+    sha256 "9d0379810acca61c76dd55a6751f66e1b989b23d4ad4388a3552658b67e69390"
   end
 
   def install
