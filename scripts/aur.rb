@@ -15,7 +15,7 @@ end
 pkgbuild = File.read("phetch-aur/PKGBUILD")
 
 count = pkgbuild[/pkgrel=(.+)/, 1].to_i
-pkgbuild.sub!("pkgrel=#{count}", "pkgrel=#{count += 1}")
+pkgbuild.sub!("pkgrel=#{count}", "pkgrel=1")
 
 oldver = pkgbuild[/pkgver=(.+)/, 1]
 pkgbuild.sub!("pkgver=#{oldver}", "pkgver=#{version.sub('v','')}")
