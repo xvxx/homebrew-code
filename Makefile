@@ -38,6 +38,17 @@ phetch-aur:
 phetch-clone:
 	git clone https://github.com/xvxx/phetch phetch-clone
 
+shy: shy-update
+	./scripts/brew.rb shy-clone/Cargo.toml > shy.rb
+	git commit -am "shy $(VERSION)"
+	rm -f *.tgz *.zip
+
+shy-update: shy-clone
+	cd shy-clone && git pull
+
+shy-clone:
+	git clone https://github.com/xvxx/shy shy-clone
+
 clean:
 	rm -f *.tgz *.zip *.tgz.* *.zip.*
 	rm -rf *-aur *-clone
