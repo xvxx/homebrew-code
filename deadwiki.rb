@@ -13,7 +13,7 @@ class Deadwiki < Formula
   end
 
   def install
-    bin.install "deadwiki"
+    bin.install "dead"
     if File.exists? "deadwiki.1"
       man.install "deadwiki.1"
     end
