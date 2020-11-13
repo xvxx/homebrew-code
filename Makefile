@@ -4,6 +4,7 @@ default: phetch
 
 deadwiki: deadwiki-update
 	./scripts/brew.rb deadwiki-clone/Cargo.toml > deadwiki.rb
+	sed -i '' 's/install "deadwiki"/install "dead"/g' deadwiki.rb
 	git commit -am "deadwiki $(VERSION)"
 	rm -f *.tgz *.zip
 
