@@ -16,6 +16,7 @@ deadwiki-clone:
 
 phd: phd-update
 	./scripts/brew.rb phd-clone/Cargo.toml > phd.rb
+	git commit -am "phd $(VERSION)"
 	rm -f *.tgz *.zip
 
 phd-update: phd-clone
@@ -27,6 +28,7 @@ phd-clone:
 phetch: phetch-update
 	./scripts/brew.rb phetch-clone/Cargo.toml > phetch.rb
 	./scripts/aur.rb
+	git commit -am "phetch $(VERSION)"
 	rm -f *.tgz *.zip
 
 phetch-update: phetch-clone phetch-aur
