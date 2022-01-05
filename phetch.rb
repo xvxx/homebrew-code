@@ -2,7 +2,6 @@ class Phetch < Formula
   desc "quick lil gopher client"
   homepage "https://github.com/xvxx/phetch"
   version "v1.1.0"
-  bottle :unneeded
 
   if OS.mac?
     url "https://github.com/xvxx/phetch/releases/download/v1.1.0/phetch-v1.1.0-macos.zip"

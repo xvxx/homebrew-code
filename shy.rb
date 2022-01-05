@@ -2,7 +2,6 @@ class Shy < Formula
   desc "bare-bones ssh launcher"
   homepage "https://github.com/xvxx/shy"
   version "v0.1.10"
-  bottle :unneeded
 
   if OS.mac?
     url "https://github.com/xvxx/shy/releases/download/v0.1.10/shy-v0.1.10-macos.zip"

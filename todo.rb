@@ -2,7 +2,6 @@ class Todo < Formula
   desc "dirt simple todos cli"
   homepage "https://github.com/xvxx/ldpl-todo/"
   version "1.0.0"
-  bottle :unneeded
 
   if OS.mac?
     url "https://github.com/xvxx/ldpl-todo/releases/download/v1.0.1/todo-v1.0.1-macos.zip"

@@ -2,7 +2,6 @@ class Phd < Formula
   desc "an esoteric gopher server"
   homepage "https://github.com/xvxx/phd"
   version "v0.1.14"
-  bottle :unneeded
 
   if OS.mac?
     url "https://github.com/xvxx/phd/releases/download/v0.1.14/phd-v0.1.14-macos.zip"

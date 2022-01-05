@@ -2,7 +2,6 @@ class Deadwiki < Formula
   desc "dead simple personal wiki"
   homepage "https://github.com/xvxx/deadwiki"
   version "v0.1.27"
-  bottle :unneeded
 
   if OS.mac?
     url "https://github.com/xvxx/deadwiki/releases/download/v0.1.27/deadwiki-v0.1.27-macos.zip"

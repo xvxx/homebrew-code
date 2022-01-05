@@ -43,7 +43,6 @@ class {class-name} < Formula
   desc "{description}"
   homepage "{url}"
   version "{version}"
-  bottle :unneeded
 
   if OS.mac?
     url "{url}/releases/download/{version}/{name}-{version}-macos.zip"
