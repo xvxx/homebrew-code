@@ -12,6 +12,11 @@ if version.empty?
     exit 1
 end
 
+def cmd(s)
+    puts ">> #{s}"
+    `#{s}`
+end
+
 pkgbuild = File.read("phetch-aur/PKGBUILD")
 
 count = pkgbuild[/pkgrel=(.+)/, 1].to_i
@@ -22,17 +27,16 @@ pkgbuild.sub!("pkgver=#{oldver}", "pkgver=#{version.sub('v','')}")
 
 File.open('PKGBUILD.new', 'w') { |f| f.puts pkgbuild }
 
-`ssh archdev 'git clone https://aur.archlinux.org/phetch.git phetch-aur'`
-`ssh archdev 'cd phetch-aur && git clean -fd && git checkout . && git pull'`
-`scp PKGBUILD.new archdev:~/phetch-aur/PKGBUILD`
-`ssh archdev 'cd phetch-aur && makepkg'`
-`rm -f PKGBUILD.new`
+cmd "ssh archdev 'git clone https://aur.archlinux.org/phetch.git phetch-aur'"
+cmd "ssh archdev 'cd phetch-aur && git clean -fd && git checkout . && git pull'"
+cmd "scp PKGBUILD.new archdev:~/phetch-aur/PKGBUILD"
+cmd "ssh archdev 'cd phetch-aur && makepkg'"
+cmd "rm -f PKGBUILD.new"
 
-puts "ssh archdev 'sha256sum phetch-aur/phetch-#{version.sub('v','')}.tar.gz'"
-newsha = `ssh archdev 'sha256sum phetch-aur/phetch-#{version.sub('v','')}.tar.gz'`.split(' ').first
+newsha = cmd("ssh archdev 'sha256sum phetch-aur/phetch-#{version.sub('v','')}.tar.gz'").split(' ').first
 oldsha = pkgbuild[/sha256sums=(.+)/, 1]
 pkgbuild.sub!("sha256sums=#{oldsha}", "sha256sums=('#{newsha}')")
 
-`cd phetch-aur && makepkg --printsrcinfo > .SRCINFO`
+cmd "cd phetch-aur && makepkg --printsrcinfo > .SRCINFO"
 
 File.open('phetch-aur/PKGBUILD', 'w') { |f| f.puts pkgbuild }
