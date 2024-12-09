@@ -13,9 +13,6 @@ class Phetch < Formula
 
   def install
     bin.install "phetch"
-    if File.exists? "phetch.1"
-      man.install "phetch.1"
-    end
+    man.install "phetch.1"
   end
 end
-
