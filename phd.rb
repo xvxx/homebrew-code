@@ -13,7 +13,7 @@ class Phd < Formula
 
   def install
     bin.install "phd"
-    if File.exists? "phd.1"
+    if File.exist? "phd.1"
       man.install "phd.1"
     end
   end
