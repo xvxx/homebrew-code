@@ -54,7 +54,7 @@ class {class-name} < Formula
 
   def install
     bin.install "{name}"
-    if File.exists? "{name}.1"
+    if File.exist? "{name}.1"
       man.install "{name}.1"
     end
   end
